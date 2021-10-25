@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>MakeCardGames</title>
+
+<!-- Link das fontes ultilizadas de um servidor google -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.gstatic.com" rel="preconnect" >
+<!-- Referência para fazer o carousels -->
+<link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- Inicio da configuração do menu -->
+
+<header>
+		
+	<div class= "center">
+		<div class="logo">
+			<h3> MCG </h3>
+		</div>
+		
+		<div class="name">
+			<h2>Make Card Game</h2>
+		</div>
+		
+		<div class= "login">
+			<a class="btn-login" href="index.html">
+			<span class="material-icons" id= "btnIcon" onclick="location.href='signin.html'">account_circle</span>Login
+			</a>
+		</div>
+	</div> <!-- center -->
+			
+</header>
+	
+	<div class= "left">	
+		<div class="menu">
+
+			<a href="game.html">
+			<span class="material-icons" id= "btnIcon">sports_esports</span> Games
+			</a>
+			
+			<a href="profile.html">
+			<span class="material-icons" id= "btnIcon">person</span> Account
+			</a>
+						
+			<ul  class="menu-more">
+			<li>
+			<a href="#"> <span class="material-icons">expand_more</span> More </a>
+				<ul>
+					<li><a href="forum.html"><span class="material-icons">forum</span> Forum</a></li>
+					<li><a href="faq.html"><span class="material-icons">quiz</span> FAQ</a></li>
+					<li><a href="help.html"><span class="material-icons">help</span> Help</a></li>
+				</ul>	
+			 </li>
+			</ul>
+			
+		</div> <!-- menu -->
+				<div class="search">
+			<ul class="menu-search">
+				<li id="menu-search"> <input id="search" type="text" placeholder="search..."/>
+				<li id="menu-search"> <a href="search.html"> <span class="material-icons" id="btnSearch" alt="search">search</span> </a>
+			</ul>
+		</div> <!-- search -->
+	</div> <!-- left -->
+
+<!-- Fim da configuração do menu -->
+
+<!-- Inicio da configuração do Main -->
+	
+<section class="main">
+
+	<div class="left">
+		<p>Welcome to the Make Card Game website. On this site you can create custom cards as you like.</p>
+	</div><!-- left -->
+
+	<div class="configcarousel">
+		
+		<div id="title">
+			<h2> Make Your Own Card</h2>
+		</div>
+		
+	</div> <!-- configcarousel-->
+	<div class="carousel-header">
+
+		<div class="carousel" data-flickity='{"wrapAround":true, "groupCells": 4, "draggable": false}'>
+			<div class="cell-cards"><a href="carta.html"><img src="carta(15).png" height="300px" width="211px" ></a></div>
+			<div class="cell-cards"></div>
+			<div class="cell-cards"></div>
+			<div class="cell-cards"></div>
+			<div class="cell-cards"></div>
+			<div class="cell-cards"></div>
+			<div class="cell-cards"></div>		
+		</div>
+	
+	</div> <!-- carousel header -->
+	
+</section>
+
+<!-- Fim da configuração do Main -->
+
+<!-- Inicio da configuração do Rodapé -->
+
+<footer>
+	<p id="license">
+		© 2021 Make Card Games. All <a href="terms.html">Rights Reserved.</a>
+	</p>
+</footer>
+
+<!-- Fim da configuração do Rodapé -->
+		
+<!-- Configuração do Carousel -->
+
+		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+		<script src="enter.js"></script>
+
+</body>
+
+</html>

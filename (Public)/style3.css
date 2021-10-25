@@ -1,0 +1,134 @@
+*{	
+	margin: 0;
+	padding: 0px;
+	box-sizing: border-box; 
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	background: linear-gradient(45deg, #053742, #39A2DB, #92d3f7, #aec9cf);
+	background-size: 300%, 300%;
+	animation: colors 15s ease infinite;
+}
+
+@keyframes colors{
+	0%{
+		background-position: 0% 50%;
+	}
+
+	50%{
+		background-position: 100% 50%;
+	}
+
+	100%{
+		background-position: 0% 50%;
+	}
+}
+header{
+	max-width: 1100px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.logo{
+	width: 70%;
+	text-align: center;
+	border: 4px ridge black;
+	background: linear-gradient(45deg, rgb(175, 175, 175), rgb(238, 235, 235));
+	background-size: 100%, 100%;
+	box-shadow: -15px 12px 8px 5px rgb(59, 59, 59);
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.logo h3{
+	margin: 0 auto;
+	margin-left: 70px;
+	color: #2b2b2b;
+	font-family: 'Monoton', cursive;
+	font-weight: normal;
+	font-size: 80px;
+}
+
+.logo h1{
+	margin: 0 auto;
+	margin-left: 40px;
+	color: #2b2b2b;
+}
+
+.signup{
+	padding: 10px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+ul, li{
+	padding: 10px;
+	list-style: none;
+}
+
+ul{
+	text-align: center;
+}
+
+p{
+	padding: 10px;
+}
+
+.signup .signup-org{
+	padding: 70px;
+}
+
+
+
+#buttonS{
+	margin-left: 50px;
+	width: 80%;
+	background: #2b2b2b;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+}
+
+.button, #button, #nick, #fName, #email, #pass, #repPass{
+	margin: 0 auto;
+	background: #2b2b2b;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+}
+
+#email{
+	margin-left:5px;
+}
+
+#remember{
+	margin-left: 50px;
+}
+
+#pass{
+	margin-left: 5px;
+}
+
+#p{
+	margin-left: -30px;
+}
+
+/* Configuração da classe opções do Sign In */
+
+
+.signip .signip-org{
+	padding: 70px;
+}
+
+#line{
+	position: absolute;
+	height: 350px;
+	border-left: 2px solid #2b2b2b;
+}
+
+.options{
+	margin: 0 0 0 60px;
+}
