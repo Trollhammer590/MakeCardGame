@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>MCG - Profile</title>
+
+<!-- Link das fontes ultilizadas de um servidor google -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<link href="https://fonts.gstatic.com" rel="preconnect" >
+<!-- Referência para fazer o carousels -->
+<link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+<link href="style2.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- Inicio da configuração do menu -->
+
+<header>
+	<div class= "center">
+		<div class="logo">
+			<h3> MCG </h3>
+		</div>
+				<div class="name">
+			<h2>Make Card Game - Profile</h2>
+		</div> <!-- name -->
+		
+		</div> <!-- login -->
+	</div> <!-- center -->
+			
+</header>
+	
+	<div class= "left">	
+		<div class="menu">
+			<a href="home.html">
+			<span class="material-icons" id= "btnIcon">account_circle</span>Home
+			</a>
+			
+			<a href="game.html">
+			<span class="material-icons" id= "btnIcon">sports_esports</span> Games
+			</a>
+			
+			<a href="profile.html">
+			<span class="material-icons" id= "btnIcon">person</span> Account
+			</a>
+						
+			<ul  class="menu-more">
+			<li>
+			<a href="#"> <span class="material-icons">expand_more</span> More </a>
+				<ul>
+					<li><a href="forum.html"><span class="material-icons">forum</span> Forum</a></li>
+					<li><a href="faq.html"><span class="material-icons">quiz</span> FAQ</a></li>
+					<li><a href="help.html"><span class="material-icons">help</span> Help</a></li>
+				</ul>	
+			 </li>
+			</ul>
+			
+		</div> <!-- menu -->
+				<div class="search">
+			<ul class="menu-search">
+				<li id="menu-search"> <input id="search" type="text" placeholder="search..."/>
+				<li id="menu-search"> <a href="search.html"> <span class="material-icons" id="btnSearch" alt="search">search</span> </a>
+			</ul>
+		</div> <!-- search -->
+	</div> <!-- left -->
+	
+<!-- Fim da configuração do menu -->
+
+<p name="msg-01" style="display: none;">Profile pic saved, refresh your page (F5)</p>
+<p name="msg-02" style="display: none;">Profile config saved :) refresh your page (F5)</p>
+
+<!-- Inicio da configuração do Main -->
+	
+<section class="main">
+
+	<div id="profile-icon-photo">
+		<img src="https://i.pinimg.com/originals/5b/0b/33/5b0b33ca30a6f5ad68b3f5b2ed08c977.jpg" id="img-profile" alt="Profile Picture"/>
+		<span class="material-icons" id="material-icons-profile">account_circle</span>
+	</div>
+	<div class= "profile">
+	
+		<button class="add-pic">
+		<span class="material-icons add-pic" id="add-pic">add</span>
+		</button>	
+
+	<div class="left">
+		<div class="info" id="info" style="display: block">
+			
+			<button  type="submit" id="edit-info" name= "edit-infor">
+				<span class="material-icons edit-info" id="edit-info" >edit</span>
+			</button>
+
+			<form class="form-info" >
+					<div id="column-nickname">	
+						<h1>Nickname</h1>
+					</div>
+				<li id="li-info">
+					<div class="column-phone">				
+						<h3>Phone:</h3>
+					</div>	
+					<div class="column-phone"  id="column-phone">
+						<i> (12) 34567-8910 </i>
+					</div>
+				</li>
+				<li id="li-info">	
+					<div class="column-email">
+						<h3>Email: </h3>
+					</div> 	
+					<div class="column-email" id="column-email">
+						<i> abcdefg@hijklm.nop.qr </i>
+					</div> 	
+				</li>
+				<li id="li-info">
+					<div class="column-password">
+						<h3>Password:</h3> 
+					</div>
+					<div class="column-password">
+						<i> *********</i>
+					</div>
+				</li>
+			</form>
+		</div> <!-- info -->
+
+		<div id="input-info" style="display: none;">
+
+			<span class="material-icons" name="cancel">cancel</span>
+
+				<div>	
+					<h1 id="nickname" alt="">Profile Config</h1>
+					<br><br>
+				</div>
+			<li style="list-style-type: none">
+				<h3>New Nickname:</h3>
+				<input type="text" id="name" name='nickname'>	
+				<h3>New Email: </h3>
+				<input type="text" id="email" name='email'>
+				<h3>New Phone:</h3>
+				<input type="text" id="number" name='number'>				
+			</li>
+			
+			<button type="submit" id="salvar" name="salvar"> Save Config</button>
+		</div>
+			<input type="file" id="file" name="upload-file" hidden><br>
+			<button type="submit" id="s" name="s" style="display: none;"> Save Picture </button>
+			
+	</div> <!-- left -->
+			
+		<div class="configcarousel">
+			<div id="title">
+			<h2> My Decks</h2>
+			</div>
+		</div> 
+	
+	<div class="carousel-header">
+		<div class="carousel" data-flickity='{"wrapAround":true, "groupCells": 3, "draggable": false}'>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>
+			<div class="cell-cards" onclick="location.href='deck.html'"></div>		
+		</div>
+	</div> <!-- carousel header -->
+
+	</div> <!-- profile -->
+	
+</section>
+
+<!-- Fim da configuração do Main -->
+
+<!-- Inicio da configuração do Rodapé -->
+
+<footer>
+	<p id="license">
+		© 2021 Make Card Games. All <a href="terms.html">Rights Reserved.</a>
+	</p>
+</footer>
+
+<!-- Fim da configuração do Rodapé -->
+		
+<!-- Configuração do Carousel -->
+		
+		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+		<script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+		<script type="module">
+		
+			import { initializeApp, getApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+			import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+			import { getFirestore, collection, doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+			import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js';
+			const firebaseApp = initializeApp({
+			apiKey: "AIzaSyAR61dkpsiGFCQRzCQ4nkAbU0plC-kYslY",
+			authDomain: "make-cardgame.firebaseapp.com",
+			projectId: "make-cardgame",
+			storageBucket: "make-cardgame.appspot.com",
+			messagingSenderId: "1016341861949",
+			appId: "1:1016341861949:web:c95383455399adf6597c54",
+			measurementId: "G-RBP9Q9N1ES"
+			});
+
+			document.getElementById("column-phone").style='margin:-22px 0 0 70px;';
+			document.querySelector('[name=cancel]').addEventListener("click", function(){
+				document.getElementById("input-info").style='display: none;';
+				document.getElementById("info").style='display: block;';
+			})
+
+			document.getElementById("edit-info").addEventListener("click", function(){
+				document.getElementById("input-info").style='display: block;'+
+															'margin: 100px 0 0 400px;';
+				document.getElementById("info").style='display: none;';
+				document.querySelector('[name= email]').style='width: 60%;'+
+    														  'text-align: center;'+
+    														  'padding: 17px 20px;'+
+    														  'border: none;'+
+    														  'border-radius: 4px;'+
+    														  'background-color: #2b2b2b;' +
+    														  'margin: 0 0 0 80px;';
+				document.querySelector('[name= number]').style='width: 60%;'+
+    														  'text-align: center;'+
+    														  'padding: 17px 20px;'+
+    														  'border: none;'+
+    														  'border-radius: 4px;'+
+    														  'background-color: #2b2b2b;' +
+    														  'margin: 0 0 0 80px;';
+				document.querySelector('[name= nickname]').style='width: 60%;'+
+    														  'text-align: center;'+
+    														  'padding: 17px 20px;'+
+    														  'border: none;'+
+    														  'border-radius: 4px;'+
+    														  'background-color: #2b2b2b;' +
+    														  'margin: 0 0 0 80px;';
+				document.querySelector('[name= upload-file]').style='width: 60%;'+
+    														  'text-align: center;'+
+    														  'padding: 17px 20px;'+
+    														  'border: none;'+
+    														  'border-radius: 4px;'+
+    														  'background-color: #2b2b2b;' +
+    														  'margin: 0 0 0 80px;';
+				document.querySelector('[name= upload-file]').style='width: 250px;';
+				document.querySelector('[name= cancel]').style='margin: 0 0 0 400px;';
+				document.querySelector('[name= salvar]').style='width: 100px;'+
+															   'color: white;'+
+															   'position: absolute;'+
+															   'background-color: #2b2b2b;'+
+															   'border:10px solid #2b2b2b;'+
+															   'border-radius: 3px;'+
+															   'margin: 10px 0 0 300px;';	
+			});
+
+			const auth = getAuth();
+			//const storage= getStorage(firebaseApp);
+ // <-- Auth
+				const firebaseConfig = {
+					apiKey: "AIzaSyAR61dkpsiGFCQRzCQ4nkAbU0plC-kYslY",
+					authDomain: "make-cardgame.firebaseapp.com",
+					projectId: "make-cardgame",
+					storageBucket: "make-cardgame.appspot.com",
+					messagingSenderId: "1016341861949",
+					appId: "1:1016341861949:web:c95383455399adf6597c54",
+					measurementId: "G-RBP9Q9N1ES"
+				}
+				const app = initializeApp(firebaseConfig);
+			onAuthStateChanged(auth, (user) => {
+			if (user) {
+
+				const uid = user.uid;
+			document.getElementById("salvar").addEventListener("click", function(){
+					const user = auth.currentUser;
+
+				if (user !== null) {
+						const profile= doc(db, "user", user.uid);
+						const displayName = document.getElementById('name').value;
+						const email = document.getElementById('email').value;
+						//https://data.whicdn.com/images/236787761/original.png
+						const phoneNumber = document.getElementById('number').value;
+						
+						const uid = user.uid;
+						console.log(displayName);
+						console.log(email);
+						console.log(phoneNumber);
+
+						setDoc(profile,{
+							name: displayName,
+							email: email,
+							number: phoneNumber
+						})
+						}
+						
+				document.getElementById("input-info").style='display: none;';
+				document.getElementById("info").style='display: block;';			
+				document.querySelector('[name= msg-02]').style='display: block;'+
+					'text-align: center;'+
+					'width: 170px;'+
+					'position: absolute;'+
+					'margin: 550px 0 0 650px;'+
+					'color: green;';
+			});
+
+				const db = getFirestore(firebaseApp);				
+				
+				const profile= doc(db, "user", user.uid);
+
+				const docSnap = getDoc(profile).then(docSnap => {
+					
+				const storage = getStorage(app);
+				
+				document.getElementById("add-pic").addEventListener("click", function(){
+				document.querySelector('[name= s]').style='width: 175px;'+
+					'display: block;'+
+					'margin: 350px 0 0 75px;'+
+					'color: white;'+
+					'position: absolute;'+
+					'background-color: #2b2b2b;'+
+					'border:10px solid #2b2b2b;'+
+					'border-radius: 3px;';
+				})
+			
+                document.getElementById("s").addEventListener("click", function(){
+				const file = document.getElementById('file').files.item(0); // instance of File
+				const storageRef = ref(storage, ("profile-pic/"+`${user.uid}`+"/profilepic"));
+				
+				if(file!=null){
+				document.querySelector('[name= s]').style='display: none;';
+				document.querySelector('[name= msg-01]').style='display: block;'+
+					'text-align: center;'+
+					'width: 200px;'+
+					'position: absolute;'+
+					'margin: 500px 0 0 225px;'+
+					'color: green;';
+				}
+				
+				uploadBytes(storageRef, file).then((snapshot) => {
+				console.log('Uploaded a blob or file!');
+                })
+
+				setDoc(profile,{
+					name: displayName,
+					email: email,
+					number: phoneNumber
+				})
+				
+				});
+				getDownloadURL(ref(storage, "profile-pic/"+`${user.uid}`+"/profilepic"))
+				.then((url) => {
+					// `url` is the download URL for 'images/stars.jpg'
+
+					// This can be downloaded directly:
+					const xhr = new XMLHttpRequest();
+					xhr.responseType = 'blob';
+					xhr.onload = (event) => {
+					const blob = xhr.response;
+					};
+					xhr.open('GET', url);
+					xhr.send();
+
+					// Or inserted into an <img> element
+					const img = document.getElementById('img-profile');
+					img.setAttribute('src', url);
+				})
+				.catch((error) => {
+					// Handle any errors
+				});
+				/*getDownload - https://firebase.google.com/docs/storage/web/download-files
+				
+				const forestRef = ref(storage, ("profile-pic/"+`${user.uid}`+"/IMG_2889.JPG"));	
+						getMetadata(forestRef)
+  				.then((metadata) => {
+					console.log("metadata: "+metadata);
+				  }).catch((error) => {
+					console.log(" eitcha");
+ 				});	
+				 */
+				if (docSnap.exists()) {
+				console.log("Document data:", docSnap.data());
+				console.log("Name: ", docSnap.data().name);
+				console.log("Email: ", docSnap.data().email);
+				console.log("Number: ", docSnap.data().number);
+					if(user.email!=null){
+					const email = document.getElementById('column-email').textContent= `${docSnap.data().email}`;
+					}
+					if(user.displayName!=null){
+					const nick = document.getElementById('column-nickname')
+					nick.textContent = `${docSnap.data().name}`;
+					nick.style=
+						'width: 40%;'+
+						'font-size: 40px;'+
+						'margin: 0 0 0 100px;';
+					}
+					const pNumber = document.getElementById('column-phone');
+					if(user!=null){
+					pNumber.textContent = `${docSnap.data().number}`;
+					
+					}pNumber.style=
+						'margin:-22px 0 0 70px;';			
+
+				} else {
+				// doc.data() will be undefined in this case
+				console.log("No such document!");
+				}
+				
+			})
+			} else {
+				console.log("Auwyjdhas");
+				document.getElementById("edit-info").style='display: none;';
+				const imgProfile = document.getElementById('img-profile');
+				imgProfile.style=
+					'width: 220px;'+
+					'margin: 216px 0 0 117px';
+			}
+			})					  
+				
+		/**/
+		</script>
+		<script src="script2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en">
+
+		<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MakeCardGames - Card Creation</title>
+		
+		<!-- Link das fontes ultilizadas de um servidor google -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="../config-cards/style-card1.css"/>
+		<link rel="stylesheet" href="../../config-card.css">
+		</head>
+<body>
+
+<!-- Inicio da configuração do menu -->
+
+<header>
+
+	<div class= "center">
+		<div class="logo">
+			<h3> MCG </h3>
+		</div>
+		
+	<div class= "center">
+				<div class="name">
+			<h2>Make Card Game - Creation</h2>
+		</div> <!-- name -->
+		
+		</div> <!-- login -->
+	</div> <!-- center -->
+			
+</header>
+	
+	<div class= "left">	
+		<div class="menu">
+			<a href="../../home.html">
+			<span class="material-icons" id= "btnIcon">account_circle</span>Home
+			</a>
+			
+			<a href="../../game.html">
+			<span class="material-icons" id= "btnIcon">sports_esports</span> Games
+			</a>
+			
+			<a href="../../profile.html">
+			<span class="material-icons" id= "btnIcon">person</span> Account
+			</a>
+						
+			<ul  class="menu-more">
+			<li>
+			<a href="#"> <span class="material-icons">expand_more</span> More </a>
+				<ul>
+					<li><a href="../../forum.html"><span class="material-icons">forum</span> Forum</a></li>
+					<li><a href="../../faq.html"><span class="material-icons">quiz</span> FAQ</a></li>
+					<li><a href="../../help.html"><span class="material-icons">help</span> Help</a></li>
+				</ul>	
+			 </li>
+			</ul>
+			
+		</div> <!-- menu -->
+				<div class="search">
+			<ul class="menu-search">
+				<li id="menu-search"> <input id="search" type="text" placeholder="search..."/>
+				<li id="menu-search"> <a href="../../search.html"> <span class="material-icons" id="btnSearch" alt="search">search</span> </a>
+			</ul>
+		</div> <!-- search -->
+	</div> <!-- left -->
+<!-- Fim da configuração do menu -->
+			
+		
+	<div class="arruma">
+			<div class="title">
+				<h2>Card Creation Menu</h2>
+			</div><!--tittle-->
+
+			<div class="appe">
+				<h1>Card Appearence</h1>
+			</div><!--appe-->
+
+			<!--Início da configuração das abas-->
+			<nav class="nav_tabs">
+				<!--Aba 1(Card body)-->
+				<ul>
+					<li>
+						<input type="radio" name="tabs" class="nd_tabs" id="t1">
+						<label for="t1" id="la">Card body</label>
+					<div class="content">
+						<article>
+							<table>
+								<td>
+									<label for="csize">Card Size</label>
+							  <select id="csi" name="csize">
+								<option value=""disabled selected>Select the Card Size</option>
+							  <option value="37">Small</option>
+							  <option value="38">Medium</option>
+							  <option value="39">Large</option>
+							  <option value="50">Create your own</option>
+							</select>
+							<br>
+
+							  <label for="class">Card Classification</label>
+							  <select id="cc" name="class">
+								<option value=""disabled selected>Select the card classification</option>
+							  <option value="7">Monster</option>
+							  <option value="8">Spell</option>
+							  <option value="9">Support</option>
+							  <option value="10">Power Up</option>
+							  <option value="11">Other(Creat your own)</option>
+							</select>
+							<br>
+
+							<label for="border">Name Border</label>
+							  <select id="bd" name="border">
+								  <option value=""disabled selected>Select the image for card name border</option>
+								<option value="8">Upload from computer</option>								
+								<option value="9">Link</option>								
+								<option value="10">Use preset</option>
+								<option value="11">None</option>
+							  </select>							  
+								<button id="upload-borderimg-button">
+									<span class="material-icons">file_download</span>
+								</button>
+								<input id="selecao-arquivo-bord" style="display: none;" type='file' onchange="readURL3(this);" />
+							  	<input type="text" class="input-text" name="url" id="border-url-carta-input" placeholder=" Image in URL"/>
+							  <br>
+
+							  <label for="name">Card Name</label>
+							  <input type="text" class="input-text" name="name" id="nome-carta-input" placeholder="Input the Card Name"> 
+							  <br>
+
+							  <label id="l" for="url">Card Image</label>
+							  <input type="text" class="input-text" name="url" id="imagem-url-carta-input" placeholder=" Image in URL">
+							  <input id="selecao-arquivo-img" style="display: none;" type='file' onchange="readURL2(this);"/>
+							  </select>
+							  <button id="upload-img">
+								<span class="material-icons">file_download</span>
+							  </button>
+							  <br>
+						   <label class="border">Border Color</label>
+							  <input type="color" class="input-text-color" id="cor-texto-carta-input" placeholder="Cor do Texto">
+							  <br>
+							  
+							  <label class="font">Font Color</label>
+							  <input type="color" class="input-text-color-2" id="cor-carta-input" placeholder="Cor da Carta">
+						 <br>
+							  <label for="back">Backgroud Image</label>
+							  <select id="bi" name="back" >
+								<option value=""disabled selected>Select a image or color for card background</option>
+								<option value="4"> Upload from computer</option>
+								<option value="5">Link</option>
+								<option value="6">Use preset</option>
+								<option value="7" id="texture-card-input">Color</option>
+							  </select>
+							  <input type="color" class="input-text-color-3" id="cor-fundo-carta-input" hidden="false" placeholder="Cor de Fundo">
+							  <button id="upload-backimage-button">
+								  <span class="material-icons">file_download</span>
+							  </button>
+							  
+							  <input id="selecao-arquivo" style="display: none;" type='file' onchange="readURL(this);" />
+							  <input type="text" class="input-text" name="url" id="background-url-carta-input" placeholder=" Image in URL"> 
+							  <br>
+							  
+							  </td>
+						  </table>
+						</article>
+					</div>
+					</li><!--fim da aba 1-->
+
+					<!--aba 2(Card atributes)-->
+					<li>
+						<input type="radio" name="tabs" class="nd_tabs" id="t2">
+						<label for="t2" id="la">Card Atributes</label>
+						<div class="content">
+						<article>
+							<table>
+
+						<td>
+									<label id="l" for="ele">Card Element</label>
+								<select id="ce" name="ele">
+								<option value="" disabled selected>Select the card element</option>
+							  <option value="12">Water</option>
+							  <option value="13">Fire</option>
+							  <option value="14">Wind</option>
+							  <option value="15">Ligh</option>
+							  <option value="16">Dark</option>
+							  <option value="17">Other(Creat your own)</option>
+							</select>
+							<br>
+
+							<label id="l" for="Eicon">Element Icon</label>
+								<select id="ei" name="Eicon">
+									<option value=""disabled selected>Select a image for the element icon</option>
+								  <option value="4">Upload from computer</option>
+								  <option value="5">Link</option>
+								  <option value="6">Use preset</option>
+								</select>
+								<br>
+
+								<label id="l" for="Sclass">Stats Classification</label>
+								<select id="sc" name="Sclass">
+									<option value=""disabled selected>Select a classification for the stats</option>
+								  <option value="18">ATK, DEF, HP</option>
+								  <option value="19">Power, Resistence</option>
+								  <option value="20">Other(Creat your own)</option>
+								  <option value="21">None</option>
+								</select>
+								<br>
+								
+								<label id="l" for="Simage">Stats Background</label>
+								<select id="si" name="Simage">
+									<option value=""disabled selected>Select a background image for stats</option>
+									<option value="4">Upload from computer</option>
+									<option value="5">Link</option>
+									<option value="6">Use preset</option>
+									<option value="21">None</option>
+								  </select>
+								  <br>
+
+								  <label id="l" for="Anum">Ability Number</label>
+								  <select id="an" name="Anum">
+									<option value=""disabled selected>Select the number of abilities</option>
+									<option value="22">1</option>
+									<option value="23">2</option>
+									<option value="21">None</option>
+								  </select>
+								  <br>
+								 
+
+								<label id="l" for="mp">Mana cost</label>
+								<input type="number" class="input-text" name="mp" id="custo-mana-carta-input" placeholder="MP">  
+								<br>
+
+								<label id="l" for="a1">Ability 1 Name</label>
+								<textarea class="input-text" name="a1" id="atributos-carta-input" style="vertical-align: middle;" placeholder="Atributes of Card"></textarea>
+								<br>
+
+								<label id="l1" for="d1">Ability 1 Description</label>
+								<textarea class="input-text" name="d1" id="descricao-carta-input" style="vertical-align: middle;" placeholder="Description of Card"></textarea>
+								<br>
+
+								<label id="l" for="a2">Ability 2 Name</label>
+								<textarea class="input-text" name="a2" id="atributos-carta-input2" style="vertical-align: middle;"placeholder="Atributes of Card 2"></textarea>
+								<br>
+
+								<label id="l2" for="d2">Ability 2 Description</label>
+								<textarea class="input-text" name="d2" id="descricao-carta-input2" style="vertical-align: middle;" placeholder="Description of Card 2"></textarea>
+								<br>
+
+								<label id="l" for="Aback">Ability Background</label>
+								  <select id="ab" name="Aback">
+									<option value=""disabled selected>Select a background image for abilities</option>
+									<option value="4">Upload from computer</option>
+									<option value="5">Link</option>
+									<option value="6">Use preset</option>
+									<option value="21">None</option>
+								  </select>
+								  <br>			
+							</td>
+							</table>
+						</article>
+					</div>
+					</li>
+				</ul><!--Fim da aba 2-->
+			</nav>
+				<!--Fim da configuração das abas-->
+				
+			<select id="bar" name="baralho">
+				<option value="" disabled selected>Select the deck you want to put the card</option>
+				<option value="24">Deck 1</option>
+				<option value="25">New Deck</option>
+			</select>
+			<div class="config-carta">
+				<div class="center-div carta-container">
+					<div class="arumation">
+					<div class="carta textura-cor" id="carta">
+						
+						<div class="topo-carta">
+							<div class="nome-carta" id="nome-carta">
+								<h4 id="top-name-config">Card Name</h4>
+							</div>
+								<img id="top-name-config-img" src="https://i2.wp.com/www.aabbcomunidade.com.br/wp-content/uploads/2016/11/Fundo-Azul.png?ssl=1"/>
+							<div class="custo-mana" id="custo-mana-carta">
+								3
+							</div>
+						</div>
+						
+						<input type="color" class="input-text" id="cor-fundo-carta-input" hidden="true" placeholder="Cor de Fundo">
+						<div class="gradiente-container" hidden="true" id="gradiente-container">
+							<input type="color" class="gradient-picker" id="gradient-picker"/><input type="color" class="gradient-picker" id="gradient-picker"/><button class="add gradient-button" href="#">Add Color</button>  
+							<button id="reset-gradient-button" class="gradient-button" style="display: none;">Reset</button>
+							<button id="gradient-button" class="gradient-button">Gradient This</button>
+						</div>
+						
+						<div class="imagem-carta" id="imagem-carta-container">
+							<img id="img-carta" src="https://i.pinimg.com/originals/5b/0b/33/5b0b33ca30a6f5ad68b3f5b2ed08c977.jpg" alt=""> <!---->
+						</div>
+						<div class="rodape-carta">
+							<div class="config-descricao-carta">
+								<div class="atributos-carta" id="atributos-carta">
+									Ability 1 Name
+								</div>
+								<div class="descricao-carta" id="descricao-carta" >
+									Description Card
+								</div>
+								<div class="atributos-carta" id="atributos-carta2">
+									Ability 2 Name
+								</div>
+								<div class="descricao-carta2" id="descricao-carta2">
+									Description Card
+								</div>
+							</div>
+						</div>
+						<img id="background-carta" src="https://i.pinimg.com/originals/b5/bb/87/b5bb87a208d6ef3510fbfa8dd2177e73.jpg"  alt=""> <!---->
+					</div>
+
+					</div>
+				</div>
+				
+			</div>
+			<button id="button">Baixar Carta</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+<script src="../../script10.js"></script>
+
+<footer><!--rodapé-->
+	<p id="license">
+		© 2021 Make Card Games. All Rights Reserved.
+	</p>
+</footer><!--fim do rodapé-->
+</body>
+</html>

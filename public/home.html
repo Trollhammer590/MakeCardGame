@@ -31,8 +31,11 @@
 		</div>
 		
 		<div class= "login">
-			<a class="btn-login" href="index.html">
-			<span class="material-icons" id= "btnIcon" onclick="location.href='signin.html'">account_circle</span>Login
+			<a class="btn-login" id="btn-login" href="index.html" style="display: none;">
+				<span class="material-icons" id= "btnIcon" onclick="location.href='signin.html'">account_circle</span>Login
+			</a>
+			<a class="btn-quit" id="btn-quit" style="display: none;">
+				<span class="material-icons" id= "btnIcon" name="btn-quit">logout</span>Logout
 			</a>
 		</div>
 	</div> <!-- center -->
@@ -118,7 +121,42 @@
 <!-- Configuração do Carousel -->
 
 		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-		<script src="enter.js"></script>
+		<script type="module">
+			import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+			import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+			const firebaseApp = initializeApp({
+			apiKey: "AIzaSyAR61dkpsiGFCQRzCQ4nkAbU0plC-kYslY",
+			authDomain: "make-cardgame.firebaseapp.com",
+			projectId: "make-cardgame",
+			storageBucket: "make-cardgame.appspot.com",
+			messagingSenderId: "1016341861949",
+			appId: "1:1016341861949:web:c95383455399adf6597c54",
+			measurementId: "G-RBP9Q9N1ES"
+			});
+
+			const auth = getAuth(firebaseApp);
+			onAuthStateChanged(auth, (user) => {
+			
+			if(user){
+				document.getElementById("btn-quit").style='display: block;'+
+														  'max-width: 31%;'+
+														  'margin: 0 0 0 170px;';
+				document.getElementById("btn-login").style='display: none;';
+			document.querySelector('[name= btn-quit]').addEventListener("click", function(){
+			signOut(auth).then(() => {
+				console.log("Signout Sucessfull");
+				}).catch((error) => {
+				console.log(error);
+				});
+			});
+			} else {
+				document.getElementById("btn-login").style='display: block;';
+				document.getElementById("btn-quit").style='display: none;'+
+														   'max-width: 28%;';
+			}
+			});
+		</script>
 
 </body>
 

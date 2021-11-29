@@ -79,6 +79,17 @@ header{
 }
 
 .btn-login{
+	margin: 0 0 0 170px;
+	max-width: 28%;
+	background-color: #2b2b2b;
+	color: white;
+	display: flex-end;
+	padding: 10px ;
+	border-radius: 5px;
+}
+
+.btn-quit{
+	text-align: left;
 	background-color: #2b2b2b;
 	color: white;
 	display: flex-end;
