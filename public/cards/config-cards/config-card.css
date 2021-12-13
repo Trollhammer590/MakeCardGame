@@ -1,0 +1,94 @@
+#button{
+    position: absolute;
+    margin: 0px 0 220px 50px;
+    display: none;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    bottom: 0;
+}
+
+#button-03{
+    position: absolute;
+    margin: 0px 0 220px 50px;
+    display: none;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    bottom: 0;
+}
+
+#button:hover{
+    background-color: #878787; 
+}
+
+#button-03:hover{
+    background-color: #878787; 
+}
+
+.configuracoes-carta{
+    display: table-cell;
+    margin-left: 1%;
+    position: relative;
+}
+
+.table{
+    display: table;
+}
+
+.table-row{
+    display: table-row;
+}
+
+.input-text{
+    width: 52%;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    border: 2px solid #2b2b2b;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    resize: none;
+}
+
+#imagem-url-carta-input{
+    width: 52%;
+}
+#atributos-carta-input{
+    width: 52%;
+    margin-top: 10px;
+}
+#atributos-carta-input2{
+    width: 52%;
+    margin-top: 10px;
+}
+#nome-carta-input{
+    width: 52%;
+}
+#custo-mana-carta-input{
+    width: 52%;
+    padding: 10px;
+}
+
+.input-text:focus{
+    border: 2px solid rgb(15, 26, 26);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.titulo{
+    color: floralwhite;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 3%;
+}

@@ -159,13 +159,46 @@
 	
 	<div class="carousel-header">
 		<div class="carousel" data-flickity='{"wrapAround":true, "groupCells": 3, "draggable": false}'>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>
-			<div class="cell-cards" onclick="location.href='deck.html'"></div>		
+			<div class="cell-cards" id="01" style="z-index: -2;">
+				<img id="deck-img" src="https://i.pinimg.com/originals/5b/0b/33/5b0b33ca30a6f5ad68b3f5b2ed08c977.jpg" alt="" style="width: 141px; height: 200px; border-radius: 3%; opacity: 0.75; z-index: -1; margin: 0 0 0 -70px; position: absolute;">
+				<div>
+					<!--<div class="org">
+						<p id="input-3">Name :)</p>
+					</div>-->
+					<span class="material-icons" id= "card" onclick="location.href='deck.html'">style</span>
+					<span class="material-icons" id= "add" style="display: block;">add</span>
+					<div id="info-deck-01" style="display: none">
+						
+					<p id="par">Name Deck:</p>
+						<input type="text" id="dName">
+					
+					<input type="file" id="dPic">
+					<button id="btn-save-deck">Save</button>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="cell-cards" id="crd-2"><img id="1" src=""></div>
+			<div class="cell-cards" id="crd-3"><img id="2" src=""><p id="input-3">Name :)</p></div>
+			<div class="cell-cards" id="crd-4"><img id="3" src=""></div>
+			<div class="cell-cards" id="crd-5"><img id="4" src=""></div>
+			<div class="cell-cards" id="crd-6"><img id="5" src=""></div>
+			<div class="cell-cards" id="crd-7"><img id="6" src=""></div>
+			<div class="cell-cards" id="crd-8"><img id="7" src=""></div>
+			<div class="cell-cards" id="crd-9"><img id="8" src=""></div>
+			<div class="cell-cards" id="crd-10"><img id="9" src=""></div>
+			<div class="cell-cards" id="crd-11"><img id="10" src=""></div>
+			<div class="cell-cards" id="crd-12"><img id="11" src=""></div>	
+			<div class="cell-cards" id="crd-13"><img id="12" src=""></div>	
+			<div class="cell-cards" id="crd-14"><img id="13" src=""></div>	
+			<div class="cell-cards" id="crd-15"><img id="14" src=""></div>	
+			<div class="cell-cards" id="crd-16"><img id="15" src=""></div>	
+			<div class="cell-cards" id="crd-17"><img id="16" src=""></div>	
+			<div class="cell-cards" id="crd-18"><img id="17" src=""></div>	
+			<div class="cell-cards" id="crd-19"><img id="18" src=""></div>	
+			<div class="cell-cards" id="crd-20"><img id="19" src=""></div>	
+			<div class="cell-cards" id="crd-21"><img id="20" src=""></div>		
 		</div>
 	</div> <!-- carousel header -->
 
@@ -182,6 +215,11 @@
 		© 2021 Make Card Games. All <a href="terms.html">Rights Reserved.</a>
 	</p>
 </footer>
+<!--<span class="material-icons new-deck" id="new-deck">add</span>
+				<div id="deck-info">
+				<input type="text" id="deck-name">
+				<input type="file" id="img-deck">
+				<img src="" style="display: none;">-->
 
 <!-- Fim da configuração do Rodapé -->
 		
@@ -194,7 +232,7 @@
 		
 			import { initializeApp, getApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 			import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
-			import { getFirestore, collection, doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+			import { getFirestore, collection, doc, setDoc, getDoc, updateDoc, arrayUnion } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 			import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js';
 			const firebaseApp = initializeApp({
 			apiKey: "AIzaSyAR61dkpsiGFCQRzCQ4nkAbU0plC-kYslY",
@@ -276,7 +314,7 @@
 					const user = auth.currentUser;
 
 				if (user !== null) {
-						const profile= doc(db, "user", user.uid);
+						const profile= doc(db, user.uid, "profile");
 						const displayName = document.getElementById('name').value;
 						const email = document.getElementById('email').value;
 						//https://data.whicdn.com/images/236787761/original.png
@@ -292,6 +330,7 @@
 							email: email,
 							number: phoneNumber
 						})
+
 						}
 						
 				document.getElementById("input-info").style='display: none;';
@@ -306,7 +345,7 @@
 
 				const db = getFirestore(firebaseApp);				
 				
-				const profile= doc(db, "user", user.uid);
+				const profile= doc(db, user.uid, "profile");
 
 				const docSnap = getDoc(profile).then(docSnap => {
 					
@@ -368,16 +407,28 @@
 				.catch((error) => {
 					// Handle any errors
 				});
-				/*getDownload - https://firebase.google.com/docs/storage/web/download-files
-				
-				const forestRef = ref(storage, ("profile-pic/"+`${user.uid}`+"/IMG_2889.JPG"));	
-						getMetadata(forestRef)
-  				.then((metadata) => {
-					console.log("metadata: "+metadata);
-				  }).catch((error) => {
-					console.log(" eitcha");
- 				});	
-				 */
+
+				getDownloadURL(ref(storage, "deck-pic/"+`${user.uid}`+"/deckpic"))
+				.then((url) => {
+					// `url` is the download URL for 'images/stars.jpg'
+
+					// This can be downloaded directly:
+					const xhr = new XMLHttpRequest();
+					xhr.responseType = 'blob';
+					xhr.onload = (event) => {
+					const blob = xhr.response;
+					};
+					xhr.open('GET', url);
+					xhr.send();
+
+					// Or inserted into an <img> element
+					const img = document.getElementById('deck-img');
+					img.setAttribute('src', url);
+				})
+				.catch((error) => {
+					// Handle any errors
+				});
+
 				if (docSnap.exists()) {
 				console.log("Document data:", docSnap.data());
 				console.log("Name: ", docSnap.data().name);
@@ -394,6 +445,7 @@
 						'font-size: 40px;'+
 						'margin: 0 0 0 100px;';
 					}
+				
 					const pNumber = document.getElementById('column-phone');
 					if(user!=null){
 					pNumber.textContent = `${docSnap.data().number}`;
@@ -405,7 +457,7 @@
 				// doc.data() will be undefined in this case
 				console.log("No such document!");
 				}
-				
+
 			})
 			} else {
 				console.log("Auwyjdhas");
@@ -416,8 +468,220 @@
 					'margin: 216px 0 0 117px';
 			}
 			})					  
+			
+			const add =document.getElementById("add");
+			add.style= 
+					   'color: white;'+
+					   'border: 2px solid white;'+
+					   'border-radius: 25px;'+
+					   'background-color: #2b2b2b;'+
+					   'z-index: 10;'+
+					   'margin 150px 0 0 0;';
+			const sty =document.getElementById("card").style= 
+			  		   'font-size: 22px;'+
+					   'padding: 2px;'+
+					   'color: white;'+
+					   'border: 2px solid white;'+
+					   'border-radius: 25px;'+
+					   'background-color: #2b2b2b;'+
+					   'z-index: 10;'+
+					   'margin 150px 0 0 0;';
+
+			add.addEventListener("click", function(){
+				add.style= "display: none;";
+				document.getElementById("card").style= "display: none;"	
+				document.getElementById("info-deck-01").style= 
+				'width: 250px;'+
+				'display: block;'+
+				'position: absolute;'+
+				'index-z: 1;'+
+				'margin: -25px 0 0 -55px;';
+				document.getElementById("par").style= 
+				'color: white;'+
+				'margin: -30px 0px 0px 40px;'+
+				'font-size: 14px;'+
+				'position: absolute;';
+				document.getElementById("dName").style= 
+				'width: 125px;';
+				document.getElementById("dPic").style= 
+				'position: absolute;'+
+				'width: 150px;'+
+				'margin: 125px 0 0 -120px;'+
+				'color: white;';
+				document.getElementById("btn-save-deck").style= 
+				'width: 50px;'+
+				'color: #2b2b2b;'+
+				'position: absolute;'+
+				'background-color: white;'+
+				'border:10px solid white;'+
+				'border-radius: 3px;'+
+				'margin: 165px 0 0 -90px;';
+			})
+
+			const storage = getStorage(app);
+			document.getElementById("btn-save-deck").addEventListener("click", function(){
+				onAuthStateChanged(auth, (user) => {
+					
+					const db = getFirestore(firebaseApp);
+					const file = document.getElementById('dPic').files.item(0); // instance of File
+					const deck= doc(db, user.uid, "deck");
+					const dName= document.getElementById("dName").value;
+					const dekuNamu= doc(db, user.uid, "profile", "Deck", dName);
+					const storageRef = ref(storage, ("deck-pic/"+`${user.uid}`+`/deckpic/${dName}/deckimg`));
+					const deckN= doc(db, user.uid, "deck", dName, "1");
+					
+					
+					/*const docSnap = getDoc(deck)
+					.then(docSnap => {
+						if (docSnap.exists()) {
+							const decks = doc(db, user.uid, "deck", docSnap.data().deckName, "cards");
+							
+						} else {
+						// doc.data() will be undefined in this case
+						console.log("No such document!");
+						}
+					})
+					/*if (docSnap.exists()){
+					console.log(docSnap.data().deckName);
+					const deckN=getElementById("input-deck-name").textContent=`${docSnap.data().deckName}`;
+					} else {
+					console.log("No such document!");
+					}*/
+
+					uploadBytes(storageRef, file).then((snapshot) => {
+					console.log('Uploaded a blob or file!');
+					document.getElementById("info-deck-01").style= 'display: none;';
+					document.getElementById("card").style= 'display: block;';
+					document.getElementById("add").style= 'display: block;';
+					})
+					
+					setDoc(deckN, {
+						aa: dName
+					})
+					
+					updateDoc(deck, {
+						deckName: arrayUnion(dName)
+					})
+					
+					const docSsnap = getDoc(deck)
+							.then(docSsnap => {					
+								const num = docSsnap.data().deckName;
+						setDoc(dekuNamu, {
+							deckName: dName,
+							deckNumb: num.length,
+							deckClick: false
+						})
+					})
+})
+})
+				onAuthStateChanged(auth, (user) => {
+					const db = getFirestore(firebaseApp);
+					const list = doc(db, user.uid, "deck");
+				const docSnapu = getDoc(list)
+					.then(docSnapu => {
+						
+						
+						const array = docSnapu.data().deckName;
+						//const ult = `${docSnapu.data().Cards[array]}`;
+						//Tem um dragão na minha garagem
+						//console.log(ult);
+						const decku = doc(db, user.uid, "deck");
+
+						const docSnapup = getDoc(decku)
+							.then(docSnapup => {
+							
+								const array = docSnapup.data().deckName;
+
+							array.forEach(array => {
+
+								const deckRef = doc(db, user.uid, "profile", "Deck", `${array}`);
+
+								const docSssnapu = getDoc(deckRef)
+									.then(docSssnapu => {
+
+									const numb = docSssnapu.data().deckNumb;
+									
+									console.log(array);
+									console.log(numb);
+
+									document.getElementById(`${numb}`).addEventListener("click", function(){
+										
+										const arr= array;
+										
+											console.log(arr);
+											console.log(array);
+										if(array == arr)	{
+										const dekuNamu= doc(db, user.uid, "profile", "Deck", arr);
+											
+
+										updateDoc(dekuNamu,{
+											deckClick: true
+										})
+										const docSnap = getDoc(dekuNamu)
+											.then(docSnap => {
+												if(docSnap.data().deckClick == true){
+													window.location.href='deck.html';
+												}
+										})
+										}
+										})
+									})
+									})
+							}) // DocSnap
+					}) //DocSnapu
+
+				const docSnapupu = getDoc(list)
+					.then(docSnapupu => {
+							
+						const array = docSnapupu.data().deckName;
+
+						array.forEach(array => {
 				
-		/**/
+
+							const deckRef = doc(db, user.uid, "profile", "Deck", `${array}`);
+						
+						const docSsnapu = getDoc(deckRef)
+							.then(docSsnapu => {
+							const num = docSsnapu.data().deckNumb;								
+							
+									getDownloadURL(ref(storage, ("deck-pic/"+`${user.uid}`+`/deckpic/${array}/deckimg`)))
+										.then((url) => {
+											// `url` is the download URL for 'images/stars.jpg'
+
+											// This can be downloaded directly:
+
+											document.getElementById(`${num}`).style= 
+											 'width: 141px;'+
+											 'height: 200px;'+
+											 'border-radius: 3%;'+
+											 'opacity: 0.75;'+
+											 'margin: 0 0 0 -70px;'+ 
+											 'position: absolute;';
+											
+
+											const xhr = new XMLHttpRequest();
+											xhr.responseType = 'blob';
+											xhr.onload = (event) => {
+											const blob = xhr.response;
+											};
+											xhr.open('GET', url);
+											xhr.send();
+
+											// Or inserted into an <img> element
+											const img = document.getElementById(`${num}`);
+											img.setAttribute('src', url);
+											document.getElementById(`input-${num}`).textContent= `${array}`;
+											document.getElementById(`input-${num}`).style= 'index-z: 1;';
+										}) //then
+										.catch((error) => {
+											// Handle any errors
+										})
+									
+								})//then
+						})//array
+					})//then
+				})//auth
+			
 		</script>
 		<script src="script2.js"></script>
 </body>

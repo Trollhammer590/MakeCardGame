@@ -1,0 +1,600 @@
+*{/* Configuração geral do site */
+	margin: 0;
+	padding: 0px;
+	box-sizing: border-box; 
+	font-family: 'Open Sans', sans-serif;
+}
+/* Inicio da configuração do menu */
+
+header{
+	background-color: white;
+	padding: 20px 0;
+	border-bottom: 2px solid #2b2b2b;
+}
+
+.center{
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 2%;
+	display: flex;
+}
+
+.left{
+	max-width: 1100px;
+	margin: auto;
+	padding: 0 2%;
+	display: flex;
+}
+
+.center h2{
+	color: #2b2b2b;
+	margin-left: -400px;
+	font-size: 35px;
+}
+
+.center h3{
+	font-family: 'Monoton', cursive;
+	font-weight: normal;
+    margin-right: 50px;
+	font-size: 70px;
+}
+
+.name{
+	width: 70%;
+	margin: 30px 0 0 30px;
+
+}
+
+.menu{
+	width: 50%;
+	text-align: left;
+}
+
+#btnSports{
+	font-size: 20px;
+	margin: 10 auto;
+	padding: 4px;
+	color: white;
+}
+
+.menu a{
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	background-color: #2b2b2b;
+	padding: 10px;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.menu a:hover{
+	color: #878787;
+}
+
+#search{
+	width: 250px;
+	margin: 0 0 0 350px;
+	text-align: justify;
+	color: white;
+	padding: 5px;
+	background-color: #2b2b2b;
+	border: 5px solid #2b2b2b;
+}
+
+.search ul, li{
+	list-style: none;
+	display: inline-block;
+}
+
+.menu-more{
+	margin: -32px 0 0 313px;
+	width: 40%;
+	text-align: justify;
+	list-style: none;
+}
+
+.menu-more li{
+	color: white;
+	text-decoration: none;
+	padding: 4px;
+	display: block;
+}
+
+.menu-more > li{
+	float: left;
+}
+
+.menu-more li ul{
+  z-index: 1;
+	padding: 8px;
+	background-color: #2b2b2b;
+	display: none;
+	position: absolute;
+	min-width: 140px;
+}
+
+
+.menu-more li:hover> ul{
+	display: block;
+}
+
+.menu-search, #menu-search{
+	list-style: none;
+	display: inline-block;
+}
+
+#btnSearch{	
+	margin: -23px 0 0 0;
+	color: white;
+	position: absolute;
+	background-color: #2b2b2b;
+	border:6px solid #2b2b2b;
+	border-left: 8px;
+}
+
+/* Fim da configuração do menu */
+
+.title h2{/* Configuração de "Card Creation Menu" */
+  margin: 70px 0 0 190px;
+}
+
+h1{/* Configuração de "Card Appearence" */
+  font-size: 22px;
+  margin: -21px 0 0 880px;
+}
+
+p{/* Configuração dos parágrafos */
+  margin: 10px 0 0 0;
+  padding: 7px 0;
+}
+.p0{/* Configuração dos parágrafos */
+  margin-top: 17px;
+}
+
+#mat-01{
+  display: none;
+}
+
+input[type=text], select {/* Configuração geral dos items das abas */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+}
+
+select {/* Configuração das caixas de seleção*/
+    width: 52%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b2b2b;
+    margin-right: 80px;
+  }
+
+#text-input{/* Configuração das caixas de texto das abas */
+    width: 52%;
+    text-align: center;
+    padding: 17px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b2b2b;   
+    margin-right: 80px; 
+  }
+
+#icon-url-carta-input{
+    width: 52%;
+    text-align: center;
+    padding: 17px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b2b2b;   
+    margin: 20px 0 0 150px; 
+}
+
+.input-text-color, .input-text-color-2, .input-text-color-3{/* Configuração das caixas de texto das abas */  
+   
+    width: 50%;
+    text-align: center;
+    padding: 2px 5px;
+    border-radius: 4px;
+    background-color: #2b2b2b;   
+    margin-right: 80px; 
+  }
+
+.input-text-color{
+    margin: 10px 0 5px 40px;
+}
+
+.input-text-color-2{
+  margin: 15px 0 5px 58px;
+}
+
+.input-text-color-3{
+  position: absolute;
+  width: 40%;  
+  margin: 70px 0 5px -362px;
+}
+
+
+#carta{/* Configuração da imagem da carta */
+  height: 550px;
+  width: 350px;
+  transform: translate(-50%, -50%);
+}
+
+.nav_tabs{/* Configuração geral das abas*/
+  height: 1000px;
+	width: 710px;
+  margin: 50px 0 0 5px;
+  position: relative;
+}
+
+.nav_tabs ul{
+  list-style: none;
+}
+
+.nav_tabs ul li{
+  float: left;
+}/* Fim da configuração geral das abas*/
+
+.nav_tabs #la{/* Configuração do nome da aba */
+  width: 250px;
+  padding: 25px;
+  background-color: #2b2b2b;
+  display: block;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nd_tabs:checked ~ #la{/* Deixar a aba em outra cor quando selecionada */
+  background-color: gray;
+}
+
+.content{/* Configuração do conteúdo das abas */
+  background-color: white;
+  display: none;
+  position: absolute;
+  height: 890px;
+  width: 700px;
+  left: 0;
+}
+
+.nd_tabs{/* Opção para esconder os botões de seleção de aba */
+  display: none;
+}
+
+#t1 ~ .content{/* Opção para mostrar o conteúdo da aba 1 sem selecionar */
+  display: block;
+}
+
+#t2:checked ~ .content{/* Opção para mostrar o conteúdo da aba quando selecionada */
+  display: block;
+}
+
+#upload-backimage-button{
+  display:none;
+  margin: -57px 0 0 430px;
+	color: white;
+	position: absolute;
+	background-color: #2b2b2b;
+	border:10px solid #2b2b2b;
+	border-radius: 3px;
+}
+
+#upload-borderimg-button{
+  display:none;
+  margin: -57px 0 0 430px;
+	color: white;
+	position: absolute;
+	background-color: #2b2b2b;
+	border:10px solid #2b2b2b;
+	border-radius: 3px;
+}
+
+#upload-img{
+  margin: 8px 0 0 10px;
+	color: white;
+	position: absolute;
+	background-color: #2b2b2b;
+	border:8px solid #2b2b2b;
+	border-radius: 3px;
+}
+
+.upload-iconimg-button{
+    margin: 8px 0 0 450px;
+    display: none;
+    color: white;
+    position: absolute;
+    background-color: #2b2b2b;
+    border:8px solid #2b2b2b;
+    border-radius: 3px;
+  }
+
+#background-url-carta-input{
+  width: 52%;
+  margin-left:145px;
+  display: none;
+}
+
+#border-url-carta-input{
+  width: 52%;
+  margin-left:145px;
+  display: none;
+}
+
+.arruma{/* Borda da carta */
+	width: 1200px;
+  height: 1180px;
+  margin: 100px auto;
+  margin-left: 50px;
+  position: relative;
+  border: 2px solid black;
+	border-radius: 5px;
+	padding: 30px
+}
+
+.config-carta{
+  margin: -1000px 0 0 800px;
+  height: 550px;
+  width: 350px;
+}
+
+.login{/* Estilização do botão de login */
+  margin: 10px 0 0 500px;
+	text-align: right;
+}
+
+#l{
+margin-left: 10px;
+}
+
+#p1{
+  margin-top:12px;
+}
+
+#tp{
+	margin-left:65px;
+}
+
+#bd{
+	margin-left:37.2px;
+}
+
+#nome-carta-input{
+	margin-left:54px;
+}
+
+#ci{
+	margin-left:53px;
+}
+
+#bi{
+	margin-left:9.3px;
+}
+
+#ce{
+	margin-left:47.9px;
+}
+
+#ei{
+	margin-left:52px;
+}
+
+#sc{
+	margin-left:10.2px;
+}
+
+#si{
+	margin-left:18px;
+}
+
+#an{
+	margin-left:36.5px;
+}
+
+.div-btn{
+  display: none;
+}
+
+#imagem-url-carta-input{
+	margin-left:42px;
+}
+
+#custo-mana-carta-input{
+	margin-left:72px;
+}
+
+#atributos-carta-input{
+	margin-left:41px;
+}
+
+#atributos-carta-input2{
+	margin-left:41.3px;
+}
+
+#ab{
+	margin-left:9px;
+}
+
+#descricao-carta-input, #descricao-carta-input2{
+	margin-left:10.6px;
+}
+
+#csi{
+  margin-left: 68px;
+}
+
+/* card config */
+
+
+.arumation{
+  background-size: cover;
+  width: 350px;
+  height: 550px;
+  border-radius: 3%;
+}
+
+.carta{
+  margin: 275px 0 0 175px;
+  width: 350px;
+  height: 550px;
+  border-radius: 3%;
+  border: 2px solid black;
+  z-index: 1;
+}
+
+/*.carta-border{
+  width: 350px;
+  height: 550px;
+  border-radius: 3%;
+  border: 2px solid black;
+  z-index: 10;
+}*/
+
+#background-carta{
+  position: absolute;
+  margin: -549px 0 0 -2px;
+  background-size: cover;
+  z-index: -2;
+  width: 349px;
+  height: 550px;
+  border-radius: 3%;
+  border: 2px solid black;
+}
+
+.textura-cor{
+  background-color: #ff1669;
+}
+
+.nome-carta{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  text-align: center;
+  color: floralwhite;
+  font-weight: bolder;
+  padding-top: 5px;
+  border-radius: 8px;
+}
+
+#top-name-config, #top-name-config-img{
+  position: absolute;
+  border-radius: 8px;
+  width: 340px;
+  height: 50px;
+  opacity: 1;
+}
+
+#top-name-config{
+margin: 3px 0 0 3px;
+}
+
+#top-name-config-img{
+margin: 1px 0 0 3px;
+z-index: -1;
+}
+.custo-mana{
+  margin-left: 1%;
+  width: 5%;
+  text-align: center;
+  color: floralwhite;
+  font-weight: bolder;
+  border-radius: 50%;
+  /*float: right;*/
+}
+
+.topo-carta{
+  height: 10%;
+}
+
+.imagem-carta{
+  border: 2px solid black;
+  height: 45%;
+}
+
+.imagem-carta img{
+  height: 100%;
+  width: 100%;
+}
+
+.rodape-carta{
+  height: 45%;
+  padding-top: 4%;
+}
+
+#icon-img{
+    width: 15%;
+    height: 10%;
+    position: absolute;
+    text-align: center;
+    color: floralwhite;
+    font-weight: bolder;
+    padding-top: 5px;
+    border-radius: 25px;
+    margin: 35px 0 0 285px;
+}
+
+.config-descricao-carta{
+  background-color: rgba(117, 117, 117, 0.671);
+  border: 2px solid black;
+  height: 75%;
+  color: floralwhite;
+  font-weight: bold;
+  padding-left: 1%;
+  padding-right: 1%;
+  word-wrap: normal;
+  overflow-y: hidden;
+  font-size: small;
+}
+
+.atributos-carta{
+  height: 25%;
+  color: floralwhite;
+  padding-left: 1%;
+  font-weight: bolder;
+  padding-top: 5%;
+}
+
+.center-div{
+  margin: auto;
+  padding: auto;
+}
+
+.carta-container{
+  width: max-content;
+  height: auto;
+  display: table-cell;
+}
+
+.btn-login{
+	background-color: #2b2b2b;
+	color: white;
+	display: flex-end;
+	padding: 10px ;
+	border-radius: 5px;
+}/* Fim da estilização do botão de login */
+
+#bar{/* Configuração do botão de adição ao baralho*/
+  width: 30%;
+  float: right;
+  margin-top: -37%;
+  margin-left: 30%;
+  margin-right: 3%;
+  list-style: none;
+}
+
+footer{/* Estilização do rodapé */
+	margin: 300px 0 0 0;
+	padding: 20px 0;
+	border-top: 2px solid #878787;
+}
+
+#license{
+	text-align: center;
+	font-size: 12px;
+}/* Fim da estilização do rodapé */

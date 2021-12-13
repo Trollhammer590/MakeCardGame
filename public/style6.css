@@ -169,7 +169,7 @@ header{
 }
 
 .decks{
-	height: 800px;
+	height: 1400px;
 	width: 1100px;
 	margin: 50px auto;
 	border: 2px solid black;
@@ -180,6 +180,11 @@ header{
 .decks-line{
 	max-width: 1100px;
 	margin: 0 auto;
+}
+
+img{
+	width: 190px;
+	height: 300px;
 }
 
 .cell-cards{
